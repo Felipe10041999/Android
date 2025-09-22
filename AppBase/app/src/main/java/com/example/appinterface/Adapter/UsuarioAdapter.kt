@@ -27,7 +27,6 @@ class UsuarioAdapter(private val usuarios: List<Usuario>) :
         private val tvNombre: TextView = itemView.findViewById(R.id.tvNombre)
         private val tvEmail: TextView = itemView.findViewById(R.id.tvEmail)
         private val tvTelefono: TextView = itemView.findViewById(R.id.tvTelefono)
-
         fun bind(usuario: Usuario) {
             tvNombre.text = "${usuario.nombres} ${usuario.apellidos}"
             tvEmail.text = usuario.email
