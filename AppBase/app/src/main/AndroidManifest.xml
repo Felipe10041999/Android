@@ -22,11 +22,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- Segunda actividad -->
-        <activity
-            android:name=".ProductosActivity"
-            android:exported="true" >
-        </activity>
         <!-- Tercera actividad -->
         <activity
                 android:name=".UsuarioActivity"
