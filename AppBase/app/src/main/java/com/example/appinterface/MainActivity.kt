@@ -15,13 +15,11 @@ import android.content.Intent
 import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.appinterface.Adapter.PersonaAdapter
 import com.example.appinterface.Api.DataResponse
 import com.example.appinterface.Api.RetrofitInstance
 
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var persona: Persona
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
