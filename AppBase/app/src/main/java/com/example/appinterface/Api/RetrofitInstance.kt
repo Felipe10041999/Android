@@ -14,13 +14,6 @@ object RetrofitInstance {
             .build()
             .create(ApiService::class.java)
     }
-    val api2kotlin: ApiServicesKotlin by lazy {
-        Retrofit.Builder()
-            .baseUrl(BASE_URL_APIKOTLIN)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(ApiServicesKotlin::class.java)
-    }
     val api3kotlin: ApiServiceUsuario by lazy {
         Retrofit.Builder()
             .baseUrl(BASE_URL_APIKOTLIN)
