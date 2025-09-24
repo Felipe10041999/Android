@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appinterface.R
-import com.example.appinterface.Usuario
+import com.example.appinterface.Usuarios.Usuario
 
 class UsuarioAdapter(private val usuarios: List<Usuario>) :
     RecyclerView.Adapter<UsuarioAdapter.UsuarioViewHolder>() {

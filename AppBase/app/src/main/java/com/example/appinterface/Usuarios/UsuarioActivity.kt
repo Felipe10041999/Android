@@ -1,6 +1,8 @@
-package com.example.appinterface
+package com.example.appinterface.Usuarios
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -10,16 +12,28 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appinterface.Adapter.UsuarioAdapter
 import com.example.appinterface.Api.RetrofitInstance
+import com.example.appinterface.R
+import com.example.appinterface.Usuarios.Usuario
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class UsuarioActivity : AppCompatActivity() {
 
+    private lateinit var adapter: UsuarioAdapter
+    private lateinit var rUsuario: RecyclerView
+    private var usuarios: List<Usuario> = listOf()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_usuario)
+
+        val btnRegistroUsuario = findViewById<Button>(R.id.RegistrarUsuario)
+        btnRegistroUsuario.setOnClickListener {
+            val intent = Intent(this, RegistroUsuario::class.java)
+            startActivity(intent)
+        }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -33,7 +47,6 @@ class UsuarioActivity : AppCompatActivity() {
     private fun mostrarUsuarios() {
         val recyclerView = findViewById<RecyclerView>(R.id.RecyUsuario)
         recyclerView.layoutManager = LinearLayoutManager(this)
-
         RetrofitInstance.api3kotlin.getUsuarios().enqueue(object : Callback<List<Usuario>> {
             override fun onResponse(call: Call<List<Usuario>>, response: Response<List<Usuario>>) {
                 if (response.isSuccessful) {

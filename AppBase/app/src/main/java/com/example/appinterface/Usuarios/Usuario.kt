@@ -1,7 +1,7 @@
-package com.example.appinterface
+package com.example.appinterface.Usuarios
 
 data class Usuario(
-    val id: Int,
+    val id: Int? = null,
     val numDoc: String,
     val nombres: String,
     val apellidos: String,

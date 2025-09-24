@@ -24,7 +24,7 @@
         </activity>
         <!-- Tercera actividad -->
         <activity
-                android:name=".UsuarioActivity"
+                android:name=".Usuarios.UsuarioActivity"
                 android:exported="true">
         </activity>
     </application>
